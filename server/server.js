@@ -12,7 +12,8 @@ app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "dist")));
 
 app.get("/", (req, res) => {
   //res.status(200).send(template());
-  res.status(200).send("Hello from the backend!");
+  //res.status(200).send("Hello from the backend!");
+  res.sendFile(path.join(CURRENT_WORKING_DIR, "dist", "index.html"));
 });
 
 app.get("*", (req, res) => {
