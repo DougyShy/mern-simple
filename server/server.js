@@ -15,6 +15,10 @@ app.get("/", (req, res) => {
   res.status(200).send("Hello from the backend!");
 });
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(CURRENT_WORKING_DIR, "dist", "index.html"));
+});
+
 let port = process.env.PORT || 3000;
 
 app.listen(port, function onStart(err) {
